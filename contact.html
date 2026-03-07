@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Friends of Derby Arboretum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media(max-width:800px){ .contact-layout{ grid-template-columns:1fr; } }
+    .contact-info-block { margin-bottom: 2rem; }
+    .contact-info-block h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+    .contact-info-block p { font-size: 0.95rem; margin-bottom: 0; }
+    .contact-info-block a { color: var(--green-mid); }
+    .contact-icon {
+      display: inline-block;
+      width: 36px; height: 36px;
+      background: var(--green-pale);
+      border-radius: 8px;
+      text-align: center; line-height: 36px;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+    .contact-form-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-form-box h3 { margin-bottom: 0.5rem; font-size: 1.6rem; }
+    .contact-form-box > p { margin-bottom: 1.75rem; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media(max-width:560px){ .form-row{ grid-template-columns:1fr; } }
+    .map-embed {
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 3rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></a>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="loudon-lodge.html">Loudon Lodge</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag" style="color:#8fcf97; border-color:#8fcf97;">Get in Touch</span>
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you — whether you want to get involved, ask a question, or find out more.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Info -->
+        <div class="animate-in">
+          <span class="section-tag">How to Reach Us</span>
+          <h2 style="margin-bottom:2rem;">Say Hello</h2>
+
+          <div class="contact-info-block">
+            <div class="contact-icon">📍</div>
+            <h3>Address</h3>
+            <p>Derby Arboretum<br>Arboretum Square<br>Derby, DE23 8FN</p>
+          </div>
+
+          <div class="contact-info-block">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <p><a href="mailto:info@friendsofderbyarboretum.org.uk">info@friendsofderbyarboretum.org.uk</a></p>
+            <p style="font-size:0.85rem; font-style:italic; color:var(--ink-muted);">Replace with your real email address</p>
+          </div>
+
+          <div class="contact-info-block">
+            <div class="contact-icon">📱</div>
+            <h3>Social Media</h3>
+            <p>Follow us for news and updates:<br>
+              <a href="#" style="color:var(--green-mid);">Facebook</a> ·
+              <a href="#" style="color:var(--green-mid);">Twitter / X</a> ·
+              <a href="#" style="color:var(--green-mid);">Instagram</a>
+            </p>
+            <p style="font-size:0.85rem; font-style:italic; color:var(--ink-muted);">Replace with your real social media links</p>
+          </div>
+
+          <div class="contact-info-block">
+            <div class="contact-icon">📅</div>
+            <h3>Meetings</h3>
+            <p>The Friends committee meets regularly throughout the year. Check the <a href="news.html" style="color:var(--green-mid);">News</a> page for upcoming meeting dates.</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-box animate-in delay-1">
+          <h3>Send Us a Message</h3>
+          <p>Fill in the form below and we'll get back to you as soon as we can.</p>
+
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="">Please select...</option>
+                <option>General enquiry</option>
+                <option>Membership</option>
+                <option>Volunteering</option>
+                <option>Events</option>
+                <option>Loudon Lodge hire</option>
+                <option>Press / media</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+          </form>
+
+          <div id="form-success" style="display:none; text-align:center; padding:2rem; color:var(--green-mid);">
+            <p style="font-size:1.5rem; margin-bottom:0.5rem;">✅</p>
+            <p style="color:var(--green-dark); font-weight:500;">Thank you for your message!</p>
+            <p>We'll be in touch soon.</p>
+          </div>
+
+          <p style="margin-top:1.25rem; font-size:0.8rem; color:var(--ink-muted); text-align:center; font-style:italic;">
+            Note: This form currently uses a placeholder submission. Connect it to a real form service such as Formspree, Netlify Forms, or EmailJS.
+          </p>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-embed animate-in">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2404.123456789!2d-1.473!3d52.912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879f14c23400001%3A0x1!2sDerby+Arboretum!5e0!3m2!1sen!2suk!4v1"
+          width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></div>
+      <nav class="footer-nav">
+        <a href="history.html">History</a><a href="events.html">Events</a><a href="loudon-lodge.html">Loudon Lodge</a>
+        <a href="news.html">News</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Friends of Derby Arboretum. Registered Charity. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.querySelector('form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

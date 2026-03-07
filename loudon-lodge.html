@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loudon Lodge — Friends of Derby Arboretum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .feature-item {
+      background: var(--green-pale);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--green-dark);
+      font-weight: 500;
+    }
+    .lodge-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 220px 220px;
+      gap: 8px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+    .lodge-gallery .lg-main { grid-row: span 2; }
+    .lodge-gallery div { overflow: hidden; }
+    .lodge-gallery img { transition: transform 0.5s ease; }
+    .lodge-gallery div:hover img { transform: scale(1.05); }
+    .enquiry-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .enquiry-box h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+    }
+    .enquiry-box > p { margin-bottom: 2rem; }
+    .google-form-embed {
+      background: var(--green-pale);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      border: 2px dashed var(--border);
+      margin-top: 1.5rem;
+    }
+    .google-form-embed p { margin-bottom: 1rem; }
+    .google-form-note {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-top: 1rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></a>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="loudon-lodge.html" class="active">Loudon Lodge</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag" style="color:#8fcf97; border-color:#8fcf97;">Venue Hire</span>
+      <h1>Loudon Lodge</h1>
+      <p>A unique and characterful venue set within the beautiful surroundings of Derby Arboretum.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Photo Gallery -->
+      <div class="lodge-gallery animate-in">
+        <!-- Replace all these with your own photos of Loudon Lodge -->
+        <div class="lg-main"><img src="https://images.unsplash.com/photo-1464146072230-91cabc968ddb?w=800&q=80" alt="Loudon Lodge exterior"/></div>
+        <div><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Lodge interior"/></div>
+        <div><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80" alt="Lodge garden"/></div>
+        <div><img src="https://images.unsplash.com/photo-1505932794465-147d1f1b2c97?w=400&q=80" alt="Lodge room"/></div>
+        <div><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400&q=80" alt="Lodge grounds"/></div>
+      </div>
+      <p style="text-align:center; color:var(--ink-muted); font-size:0.85rem; margin-top:-2.5rem; margin-bottom:3.5rem;"><em>Placeholder images — your own photos of Loudon Lodge will go here.</em></p>
+
+      <!-- About the Lodge -->
+      <div class="two-col" style="margin-bottom:5rem;">
+        <div class="col-text animate-in">
+          <span class="section-tag">About the Venue</span>
+          <h2>A Unique Setting</h2>
+          <p>Loudon Lodge is a charming building situated within Derby Arboretum, offering a truly unique setting for private events, meetings, community gatherings, and celebrations.</p>
+          <p>Named after John Claudius Loudon, the visionary landscape designer who created the Arboretum, the Lodge combines historic character with the tranquil beauty of its parkland surroundings.</p>
+          <p><strong>Add your own description of the Lodge here</strong> — including capacity, available facilities, catering arrangements, and anything else that makes it special.</p>
+
+          <div class="features-list">
+            <div class="feature-item">🌳 Arboretum setting</div>
+            <div class="feature-item">🪑 Seated events</div>
+            <div class="feature-item">☕ Kitchen facilities</div>
+            <div class="feature-item">♿ Accessible</div>
+            <div class="feature-item">🅿️ Parking nearby</div>
+            <div class="feature-item">📶 Wi-Fi available</div>
+          </div>
+          <p style="font-size:0.85rem; font-style:italic; color:var(--ink-muted);">Update the features above to reflect the Lodge's actual facilities.</p>
+        </div>
+        <div class="col-image animate-in delay-1">
+          <div class="image-frame">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Loudon Lodge interior"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enquiry Form -->
+      <div class="animate-in">
+        <div class="section-header">
+          <span class="section-tag">Get in Touch</span>
+          <h2>Make an Enquiry</h2>
+          <p style="max-width:520px; margin:0 auto;">Interested in hiring Loudon Lodge? Fill in the form below and we'll be in touch.</p>
+        </div>
+
+        <div class="enquiry-box">
+          <h3>Hire Enquiry Form</h3>
+          <p>Please complete the form with your event details. We aim to respond within 3 working days.</p>
+
+          <!-- 
+            GOOGLE FORM EMBED INSTRUCTIONS:
+            1. Go to forms.google.com and create your form
+            2. Click "Send" → embed icon (<>) → copy the iframe code
+            3. Replace the placeholder below with your real iframe embed code
+            
+            Example of what to paste:
+            <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" 
+                    width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">
+              Loading…
+            </iframe>
+          -->
+
+          <div class="google-form-embed">
+            <p>📋 <strong>Your Google Form will appear here.</strong></p>
+            <p style="font-size:0.9rem;">To embed your enquiry form:</p>
+            <ol style="text-align:left; font-size:0.9rem; color:var(--ink-muted); margin:1rem 2rem;">
+              <li>Create your form at <a href="https://forms.google.com" target="_blank" style="color:var(--green-mid);">forms.google.com</a></li>
+              <li>Click <strong>Send</strong> → the embed icon (&lt;&gt;)</li>
+              <li>Copy the iframe code</li>
+              <li>Paste it here, replacing this placeholder</li>
+            </ol>
+            <p class="google-form-note">Suggested fields: Name, Email, Phone, Type of event, Preferred date, Number of guests, Additional requirements.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></div>
+      <nav class="footer-nav">
+        <a href="history.html">History</a><a href="events.html">Events</a><a href="loudon-lodge.html">Loudon Lodge</a>
+        <a href="news.html">News</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Friends of Derby Arboretum. Registered Charity. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

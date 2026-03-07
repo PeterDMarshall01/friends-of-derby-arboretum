@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events — Friends of Derby Arboretum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .past-event-block { margin-bottom: 4rem; }
+    .past-event-block h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .past-event-block .event-meta {
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green-light); margin-bottom: 1rem;
+    }
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .upcoming-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .upcoming-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .upcoming-card-top {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .upcoming-card-top .uc-date {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+    }
+    .upcoming-card-top .uc-badge {
+      background: rgba(143,207,151,0.2);
+      color: #8fcf97;
+      border: 1px solid rgba(143,207,151,0.4);
+      border-radius: 50px;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+    }
+    .upcoming-card-body { padding: 1.5rem; }
+    .upcoming-card-body h3 { color: var(--ink); margin-bottom: 0.5rem; }
+    .upcoming-card-body .uc-detail {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></a>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="loudon-lodge.html">Loudon Lodge</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag" style="color:#8fcf97; border-color:#8fcf97;">Community Events</span>
+      <h1>Events</h1>
+      <p>Join us throughout the year for walks, planting days, talks, and community celebrations in the Arboretum.</p>
+    </div>
+  </div>
+
+  <!-- UPCOMING EVENTS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-tag">What's Coming Up</span>
+        <h2>Forthcoming Events</h2>
+      </div>
+
+      <div class="upcoming-grid">
+        <!-- Placeholder events — replace with real content -->
+        <div class="upcoming-card animate-in">
+          <div class="upcoming-card-top">
+            <span class="uc-date">Saturday 12 April 2025</span>
+            <span class="uc-badge">Free</span>
+          </div>
+          <div class="upcoming-card-body">
+            <h3>Spring Planting Day</h3>
+            <div class="uc-detail">🕙 10:00am – 1:00pm</div>
+            <div class="uc-detail">📍 Meet at the main gate</div>
+            <p style="margin-top:0.75rem;">Join us for a morning of planting and gardening. All are welcome — tools and gloves provided. A great activity for families.</p>
+          </div>
+        </div>
+
+        <div class="upcoming-card animate-in delay-1">
+          <div class="upcoming-card-top">
+            <span class="uc-date">Saturday 26 April 2025</span>
+            <span class="uc-badge">Free</span>
+          </div>
+          <div class="upcoming-card-body">
+            <h3>Friends Monthly Walk</h3>
+            <div class="uc-detail">🕙 11:00am – 12:30pm</div>
+            <div class="uc-detail">📍 Bandstand, Derby Arboretum</div>
+            <p style="margin-top:0.75rem;">A guided walk exploring the seasonal changes across the Arboretum's tree collection. Suitable for all ages and abilities.</p>
+          </div>
+        </div>
+
+        <div class="upcoming-card animate-in delay-2">
+          <div class="upcoming-card-top">
+            <span class="uc-date">Saturday 10 May 2025</span>
+            <span class="uc-badge">Free</span>
+          </div>
+          <div class="upcoming-card-body">
+            <h3>Victorian Heritage Day</h3>
+            <div class="uc-detail">🕙 10:00am – 4:00pm</div>
+            <div class="uc-detail">📍 Throughout the Arboretum</div>
+            <p style="margin-top:0.75rem;">Celebrate the Arboretum's extraordinary Victorian history with talks, displays, and period-inspired activities for all the family.</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align:center; color:var(--ink-muted); font-size:0.9rem; margin-top:1rem;">
+        <em>Add your own real events here. Remove the placeholder cards above and replace with actual event details.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- PAST EVENTS WITH GALLERIES -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-tag">Looking Back</span>
+        <h2>Past Events</h2>
+      </div>
+
+      <!-- Past Event 1 -->
+      <div class="past-event-block animate-in">
+        <div class="event-meta">March 2025</div>
+        <h3>Winter Tree Walk</h3>
+        <p>Our guided winter walk attracted over 40 visitors who enjoyed learning about the bare-branched silhouettes of the Arboretum's remarkable tree collection. Placeholder text — replace with your own description and photos.</p>
+        <div class="gallery-grid" style="margin-top:1.25rem;">
+          <!-- Replace these with your own photos -->
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=600&q=80" alt="Winter walk photo"/></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&q=80" alt="Winter walk photo"/></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="Winter walk photo"/></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=600&q=80" alt="Winter walk photo"/></div>
+        </div>
+      </div>
+
+      <!-- Past Event 2 -->
+      <div class="past-event-block animate-in">
+        <div class="event-meta">October 2024</div>
+        <h3>Autumn Colour Walk</h3>
+        <p>A beautiful autumn morning brought out families, photographers, and nature lovers alike to admire the spectacular seasonal colours of the Arboretum. Placeholder text — replace with your own description and photos.</p>
+        <div class="gallery-grid" style="margin-top:1.25rem;">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Autumn walk photo"/></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80" alt="Autumn walk photo"/></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1502657877623-f66bf489d236?w=600&q=80" alt="Autumn walk photo"/></div>
+        </div>
+      </div>
+
+      <p style="text-align:center; color:var(--ink-muted); font-size:0.9rem;">
+        <em>Add your own past events here with real photos. Each event can have its own photo gallery.</em>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></div>
+      <nav class="footer-nav">
+        <a href="history.html">History</a><a href="events.html">Events</a><a href="loudon-lodge.html">Loudon Lodge</a>
+        <a href="news.html">News</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Friends of Derby Arboretum. Registered Charity. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
