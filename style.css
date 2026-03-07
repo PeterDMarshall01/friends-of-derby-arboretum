@@ -212,10 +212,10 @@ a  { color: inherit; text-decoration: none; }
   gap: 0.25rem;
 }
 .nav-links a {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: rgba(255,255,255,0.82);
-  padding: 0.4rem 0.85rem;
+  padding: 0.5rem 1.1rem;
   border-radius: 50px;
   transition: all 0.2s;
   letter-spacing: 0.02em;
