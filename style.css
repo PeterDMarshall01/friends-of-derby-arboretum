@@ -243,9 +243,19 @@ a  { color: inherit; text-decoration: none; }
   border-radius: 2px;
   transition: all 0.3s;
 }
-
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
 @media (max-width: 900px) {
-  .nav-toggle { display: flex; }
+  .nav-inner {
+        padding: 0 1rem;
+    }
+  .container {
+    padding: 0 1rem;
+}
+    .nav-toggle { display: flex; }
   .nav-links {
     position: fixed;
     top: var(--nav-h); left: 0; right: 0;
@@ -264,6 +274,15 @@ a  { color: inherit; text-decoration: none; }
     pointer-events: all;
   }
   .nav-links a { padding: 0.65rem 1rem; font-size: 1rem; }
+  .nav-brand {
+    white-space: normal;
+    font-size: 1rem;
+    max-width: 220px;
+  }
+  .brand-leaf {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
 }
 
 /* ── HERO ── */
