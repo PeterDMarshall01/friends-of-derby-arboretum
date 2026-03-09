@@ -9,35 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
   <style>
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .team-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-    .team-avatar {
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      background: var(--green-pale);
-      margin: 0 auto 1rem;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-      overflow: hidden;
-    }
-    .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .team-card h4 { font-size: 1.05rem; margin-bottom: 0.25rem; }
-    .team-card .role {
-      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--green-light); margin-bottom: 0;
-    }
     .join-box {
       background: var(--green-dark);
       color: var(--white);
@@ -99,10 +70,14 @@
         <h2>What We Do</h2>
       </div>
       <div class="events-cards" style="margin-bottom:4rem;">
-        <div class="event-card animate-in" style="flex-direction:column; align-items:flex-start;">
-          <span style="font-size:2rem;">🌱</span>
-          <h3>Conservation & Care</h3>
-          <p>We organise regular volunteering days to plant, maintain, and care for the Arboretum's remarkable tree collection and green spaces.</p>
+        <div class="event-card animate-in" style="flex-direction:column; align-items:flex-start; padding:0; overflow:hidden;">
+          <div style="width:100%; height:320px; overflow:hidden;">
+            <img src="images/community-garden01.jpg" alt="Community Garden" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div style="padding:1.5rem;">
+            <h3>Community Garden</h3>
+            <p>We're transforming the former bowling green into a vibrant community garden, blending herbs and herbaceous plants that attract wildlife with a new community orchard of fruiting trees.</p>
+          </div>
         </div>
         <div class="event-card animate-in delay-1" style="flex-direction:column; align-items:flex-start;">
           <span style="font-size:2rem;">📚</span>
@@ -113,35 +88,6 @@
           <span style="font-size:2rem;">🤝</span>
           <h3>Community Events</h3>
           <p>From seasonal celebrations to family fun days, we bring the community together to enjoy and appreciate this wonderful green space.</p>
-        </div>
-      </div>
-
-      <!-- Committee -->
-      <div class="section-header animate-in">
-        <span class="section-tag">Our People</span>
-        <h2>The Committee</h2>
-        <p style="max-width:520px; margin:0 auto;">Replace these placeholders with your real committee members.</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card animate-in">
-          <div class="team-avatar">👤</div>
-          <h4>Your Name Here</h4>
-          <p class="role">Chair</p>
-        </div>
-        <div class="team-card animate-in delay-1">
-          <div class="team-avatar">👤</div>
-          <h4>Your Name Here</h4>
-          <p class="role">Secretary</p>
-        </div>
-        <div class="team-card animate-in delay-2">
-          <div class="team-avatar">👤</div>
-          <h4>Your Name Here</h4>
-          <p class="role">Treasurer</p>
-        </div>
-        <div class="team-card animate-in">
-          <div class="team-avatar">👤</div>
-          <h4>Your Name Here</h4>
-          <p class="role">Events Coordinator</p>
         </div>
       </div>
 
