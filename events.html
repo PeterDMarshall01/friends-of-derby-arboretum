@@ -9,12 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
   <style>
-    .past-event-block { margin-bottom: 4rem; }
-    .past-event-block h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
-    .past-event-block .event-meta {
-      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--green-light); margin-bottom: 1rem;
-    }
+    /* ── Upcoming cards (unchanged) ─────────────────────────────── */
     .upcoming-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -38,10 +33,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .upcoming-card-top .uc-date {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-    }
+    .upcoming-card-top .uc-date { font-family: var(--font-display); font-size: 1.1rem; }
     .upcoming-card-top .uc-badge {
       background: rgba(143,207,151,0.2);
       color: #8fcf97;
@@ -58,6 +50,69 @@
       display: flex; align-items: center; gap: 0.4rem;
       font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 0.35rem;
     }
+
+    /* ── Past-events grid ────────────────────────────────────────── */
+    .past-events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .past-event-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .past-event-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+    .pec-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--green-dark);
+    }
+    /* Placeholder thumb when no image */
+    .pec-thumb-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--green-dark) 0%, #2a4a2a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .pec-body { padding: 1.25rem 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .pec-meta {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 0.5rem;
+    }
+    .pec-body h3 { color: var(--ink); margin-bottom: 0.5rem; font-size: 1.3rem; }
+    .pec-body p  { color: var(--ink-muted); font-size: 0.9rem; flex: 1; }
+    .pec-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+    .pec-link::after { content: '→'; transition: transform 0.2s; }
+    .past-event-card:hover .pec-link::after { transform: translateX(4px); }
   </style>
 </head>
 <body>
@@ -93,8 +148,8 @@
         <span class="section-tag">What's Coming Up</span>
         <h2>Forthcoming Events</h2>
       </div>
-
       <div class="upcoming-grid">
+
         <div class="upcoming-card animate-in">
           <div class="upcoming-card-top">
             <span class="uc-date">Sunday 29 March 2026</span>
@@ -133,14 +188,12 @@
             <p style="margin-top:0.75rem;">Celebrate the Arboretum's extraordinary Victorian history with talks, displays, and period-inspired activities for all the family.</p>
           </div>
         </div>
-      </div>
 
-      <p style="text-align:center; color:var(--ink-muted); font-size:0.9rem; margin-top:1rem;">
-      </p>
+      </div>
     </div>
   </section>
 
-  <!-- PAST EVENTS WITH GALLERIES -->
+  <!-- PAST EVENTS — card grid linking to sub-pages -->
   <section class="section bg-light">
     <div class="container">
       <div class="section-header animate-in">
@@ -148,44 +201,67 @@
         <h2>Past Events</h2>
       </div>
 
-      <!-- Past Event 1 -->
-      <div class="past-event-block animate-in">
-        <div class="event-meta">September 2021</div>
-        <h3>Lark in the Park</h3>
-        <p>A community festival in Derby Arboretum Park around the fountain and community garden. A mix of crafts, activities, games and information stalls. Performance areas with different musicians, singing, spoken word, yoga dance, percussion workshop and magician. </p>
-        <div class="gallery-grid" style="margin-top:1.25rem;">
-          <!-- Replace these with your own photos -->
-          <div class="gallery-item"><img src="images/lark-park21-01.jpg"/></div>
-          <div class="gallery-item"><img src="images/lark-park21-02.jpg"/></div>
-          <div class="gallery-item"><img src="images/lark-park21-03.jpg"/></div>
-        </div>
+      <div class="past-events-grid">
+
+        <!-- Card: Lark in the Park -->
+        <a href="event-lark-in-the-park.html" class="past-event-card animate-in">
+          <img class="pec-thumb" src="images/lark-park21-01.jpg" alt="Lark in the Park 2021" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pec-thumb-placeholder" style="display:none">🌳</div>
+          <div class="pec-body">
+            <div class="pec-meta">September 2021</div>
+            <h3>Lark in the Park</h3>
+            <p>A community festival around the fountain with crafts, activities, live music, spoken word, percussion and more.</p>
+            <span class="pec-link">View photos &amp; details</span>
+          </div>
+        </a>
+
+        <!-- Card: Summer Workshop -->
+        <a href="event-summer-workshop-2021.html" class="past-event-card animate-in delay-1">
+          <img class="pec-thumb" src="images/summer-workshop21-01.jpg" alt="Summer Workshop 2021" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pec-thumb-placeholder" style="display:none">☀️</div>
+          <div class="pec-body">
+            <div class="pec-meta">Summer 2021</div>
+            <h3>Summer Workshop</h3>
+            <p>Families, artists, and nature lovers celebrated the Arboretum's spectacular seasonal wildlife and colours.</p>
+            <span class="pec-link">View photos &amp; details</span>
+          </div>
+        </a>
+
+        <!-- Card: Luminate -->
+        <a href="event-luminate-2019.html" class="past-event-card animate-in delay-2">
+          <img class="pec-thumb" src="images/luminate2019-01.jpg" alt="Luminate 2019" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pec-thumb-placeholder" style="display:none">🔆</div>
+          <div class="pec-body">
+            <div class="pec-meta">November 2019</div>
+            <h3>Luminate</h3>
+            <p>Lanterns, light installations from local artists, Morris dancing, music — around 200 people attended this spectacular evening.</p>
+            <span class="pec-link">View photos &amp; details</span>
+          </div>
+        </a>
+
+        <!--
+          ═══════════════════════════════════════════════════════════
+          TO ADD A NEW PAST EVENT:
+          1. Copy the block below, uncomment it, and fill in the details.
+          2. Create a new sub-page file: event-YOUR-EVENT-NAME.html
+             (copy event-lark-in-the-park.html as your starting template).
+          ═══════════════════════════════════════════════════════════
+
+        <a href="event-YOUR-PAGE.html" class="past-event-card animate-in">
+          <img class="pec-thumb" src="images/YOUR-THUMB.jpg" alt="Event name"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pec-thumb-placeholder" style="display:none">🌿</div>
+          <div class="pec-body">
+            <div class="pec-meta">Month Year</div>
+            <h3>Event Name</h3>
+            <p>Short description of the event.</p>
+            <span class="pec-link">View photos &amp; details</span>
+          </div>
+        </a>
+        -->
+
       </div>
-
-      <!-- Past Event 2 -->
-      <div class="past-event-block animate-in">
-        <div class="event-meta">Summer 2021</div>
-        <h3>Summer workshop</h3>
-        <p>A beautiful summer weekend brought out families, artists, and nature lovers alike to celebrate spectacular seasonal wildlife & colours of the Arboretum.</p>
-        <div class="gallery-grid" style="margin-top:1.25rem;">
-          <div class="gallery-item"><img src="images/summer-workshop21-02.jpg" alt="Summer workshop photo"/></div>
-          <div class="gallery-item"><img src="images/summer-workshop21-01.jpg" alt="Summer workshop photo"/></div>
-          <div class="gallery-item"><img src="images/summer-workshop21-03.jpg" alt="Summer workshop photo"/></div>
-        </div>
-      </div>
-
-
-        <!-- Past Event 3 -->
-        <div class="past-event-block animate-in">
-        <div class="event-meta">November 2019</div>
-        <h3>Luminate</h3>
-        <p>Our Luminate Festival was spectacular with lanterns, fantastic light installations from local artists, Morris dancing, music, and around 200 people attending.</p>
-        <div class="gallery-grid" style="margin-top:1.25rem;">
-          <div class="gallery-item"><img src="images/luminate2019-01.jpg" alt="Summer workshop photo"/></div>
-          <div class="gallery-item"><img src="images/luminate2019-02.jpg" alt="Summer workshop photo"/></div>
-          <div class="gallery-item"><img src="images/luminate2019-03.jpg" alt="Summer workshop photo"/></div>
-        </div>
-      </div>
-
+    </div>
   </section>
 
   <footer>
