@@ -15,8 +15,8 @@
   --ink-muted:    #555550;
   --border:       #ddd8ce;
 
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
   --font-accent:  'Fraunces', Georgia, serif;
 
   --radius:       12px;
@@ -174,6 +174,7 @@ a  { color: inherit; text-decoration: none; }
 
 /* ── NAVBAR ── */
 #navbar {
+  font-family: 'DM Sans', system-ui, sans-serif;
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-h);
@@ -201,6 +202,7 @@ a  { color: inherit; text-decoration: none; }
   gap: 0.6rem;
   font-family: var(--font-display);
   font-size: 1.4rem;
+  font-family: var(--font-body);
   color: var(--white);
   white-space: nowrap;
 }
@@ -219,6 +221,7 @@ a  { color: inherit; text-decoration: none; }
   border-radius: 50px;
   transition: all 0.2s;
   letter-spacing: 0.02em;
+  font-family: var(--font-body);
 }
 .nav-links a:hover,
 .nav-links a.active {
