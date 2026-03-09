@@ -750,6 +750,9 @@ footer {
   margin-bottom: 3rem;
   align-items: center;
 }
+.timeline-entry:nth-child(odd) .te-content  { order: 1; text-align: right; }
+.timeline-entry:nth-child(odd) .te-spacer   { order: 2; }
+.timeline-entry:nth-child(odd) .te-empty    { order: 3; }
 .timeline-entry:nth-child(even) .te-content { order: 3; text-align: left; }
 .timeline-entry:nth-child(even) .te-spacer  { order: 2; }
 .timeline-entry:nth-child(even) .te-empty   { order: 1; }
@@ -783,7 +786,11 @@ footer {
   .timeline-entry { grid-template-columns: 48px 1fr; }
   .te-empty { display: none; }
   .te-year { width: 48px; height: 48px; font-size: 0.65rem; }
-  .timeline-entry:nth-child(even) .te-content { order: unset; }
-  .timeline-entry:nth-child(even) .te-spacer  { order: unset; }
-  .timeline-entry:nth-child(even) .te-empty   { order: unset; }
+  .timeline-entry:nth-child(odd) .te-content  { order: 2; text-align: left; }
+  .timeline-entry:nth-child(odd) .te-spacer   { order: 1; }
+  .timeline-entry:nth-child(odd) .te-empty    { order: 3; }
+  .timeline-entry:nth-child(even) .te-content { order: 2; text-align: left; }
+  .timeline-entry:nth-child(even) .te-spacer  { order: 1; }
+  .timeline-entry:nth-child(even) .te-empty   { order: 3; }
+  .te-content { min-width: 0; }
 }
