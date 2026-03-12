@@ -15,7 +15,8 @@
       gap: 4rem;
       align-items: start;
     }
-    @media(max-width:800px){ .contact-layout{ grid-template-columns:1fr; } }
+    @media (max-width: 800px) { .contact-layout { grid-template-columns: 1fr; } }
+
     .contact-info-block { margin-bottom: 2rem; }
     .contact-info-block h3 {
       font-size: 1rem;
@@ -26,15 +27,19 @@
     }
     .contact-info-block p { font-size: 0.95rem; margin-bottom: 0; }
     .contact-info-block a { color: var(--green-mid); }
+
     .contact-icon {
       display: inline-block;
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       background: var(--green-pale);
       border-radius: 8px;
-      text-align: center; line-height: 36px;
+      text-align: center;
+      line-height: 36px;
       font-size: 1.1rem;
       margin-bottom: 0.6rem;
     }
+
     .contact-form-box {
       background: var(--white);
       border: 1px solid var(--border);
@@ -44,12 +49,14 @@
     }
     .contact-form-box h3 { margin-bottom: 0.5rem; font-size: 1.6rem; }
     .contact-form-box > p { margin-bottom: 1.75rem; }
+
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
-    @media(max-width:560px){ .form-row{ grid-template-columns:1fr; } }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
     .map-embed {
       border-radius: var(--radius);
       overflow: hidden;
@@ -57,14 +64,28 @@
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
     }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--green-mid);
+      margin-bottom: 0.5rem;
+    }
+    .social-link:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
 
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></a>
-      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <a href="index.html" class="nav-brand">
+        <span class="brand-leaf">🌿</span>
+        <span>Friends of Derby Arboretum</span>
+      </a>
+      <button class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="history.html">History</a></li>
@@ -109,16 +130,27 @@
           <div class="contact-info-block">
             <div class="contact-icon">📱</div>
             <h3>Social Media</h3>
-            <p>Follow us for news and updates:<br>
-              <a href="https://www.facebook.com/friendsofderbyarboretum/" target="_blank" rel="noopener noreferrer" style="color:var(--green-mid);">Facebook</a> ·
-              <a href="#" style="color:var(--green-mid);">Instagram</a>
+            <p>Follow us for news and updates:</p>
+            <p>
+              <a href="https://www.facebook.com/friendsofderbyarboretum/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                </svg>
+                Facebook
+              </a>
+              <a href="https://www.youtube.com/@friendsofderbyarboretum5223" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                YouTube
+              </a>
             </p>
           </div>
 
           <div class="contact-info-block">
             <div class="contact-icon">📅</div>
             <h3>Meetings</h3>
-            <p>The Friends committee meets regularly throughout the year. Check the <a href="news.html" style="color:var(--green-mid);">News</a> page for upcoming meeting dates.</p>
+            <p>The Friends committee meets regularly throughout the year. Check the <a href="news.html">News</a> page for upcoming meeting dates.</p>
           </div>
         </div>
 
@@ -127,7 +159,11 @@
           <h3>Send Us a Message</h3>
           <p>Fill in the form below and we'll get back to you as soon as we can.</p>
 
-          <form onsubmit="handleSubmit(event)">
+          <form action="https://formspree.io/f/mwvrboyj" method="POST">
+
+            <!-- Honeypot field — hidden from real users, catches bots -->
+            <input type="text" name="_gotcha" style="display:none"/>
+
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Your Name</label>
@@ -158,16 +194,10 @@
             <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
           </form>
 
-          <div id="form-success" style="display:none; text-align:center; padding:2rem; color:var(--green-mid);">
-            <p style="font-size:1.5rem; margin-bottom:0.5rem;">✅</p>
-            <p style="color:var(--green-dark); font-weight:500;">Thank you for your message!</p>
-            <p>We'll be in touch soon.</p>
-          </div>
-
           <p style="margin-top:1.25rem; font-size:0.8rem; color:var(--ink-muted); text-align:center; font-style:italic;">
-            Note: This form currently uses a placeholder submission. Connect it to a real form service such as Formspree, Netlify Forms, or EmailJS.
           </p>
         </div>
+
       </div>
 
       <!-- Map -->
@@ -175,7 +205,7 @@
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2404.123456789!2d-1.473!3d52.912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879f14c23400001%3A0x1!2sDerby+Arboretum!5e0!3m2!1sen!2suk!4v1"
           width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade" title="Derby Arboretum on Google Maps">
         </iframe>
       </div>
 
@@ -184,22 +214,22 @@
 
   <footer>
     <div class="container footer-inner">
-      <div class="footer-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></div>
+      <div class="footer-brand">
+        <span class="brand-leaf">🌿</span>
+        <span>Friends of Derby Arboretum</span>
+      </div>
       <nav class="footer-nav">
-        <a href="history.html">History</a><a href="events.html">Events</a><a href="loudon-lodge.html">Loudon Lodge</a>
-        <a href="news.html">News</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+        <a href="history.html">History</a>
+        <a href="events.html">Events</a>
+        <a href="loudon-lodge.html">Loudon Lodge</a>
+        <a href="news.html">News</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-copy">© 2026 Friends of Derby Arboretum. Registered Charity 1176067. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.querySelector('form').style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    }
-  </script>
 </body>
 </html>
