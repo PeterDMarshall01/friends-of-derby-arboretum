@@ -253,6 +253,11 @@ html, body {
     max-width: 100%;
 }
 @media (max-width: 900px) {
+  .hero {
+    padding-top: calc(var(--nav-h) + 1rem);
+    align-items: flex-start;
+    padding-bottom: 4rem;
+  }
   .nav-inner {
         padding: 0 1rem;
     }
