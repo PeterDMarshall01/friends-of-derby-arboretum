@@ -170,9 +170,10 @@
           </div>
           <div class="upcoming-card-body">
             <h3>MayFest 2026</h3>
-            <div class="uc-detail">🕙 Timings to be confirmed</div>
+            <div class="uc-detail">🕙 12 noon to 4pm </div>
             <div class="uc-detail">📍 Derby Arboretum</div>
-            <p style="margin-top:0.75rem;">Come join us for a day of family fun at Derby Arboretum's Village Fayre, May Fest!.</p>
+            <p style="margin-top:0.75rem;">Join the Friends of Derby Arboretum for the May Fest Victorian Tea Party. This free event features Victorian costumed characters, Maypole Dancing, music, activities, games, and refreshments.</p>
+            <button onclick="document.getElementById('posterModal').classList.add('active')" class="btn btn-outline-dark" style="margin-top:0.75rem; font-size:0.8rem; padding:0.55rem 1.25rem;">🎪 View Poster</button>
           </div>
         </div>
 
@@ -290,5 +291,32 @@
   </footer>
 
   <script src="main.js"></script>
+
+  <!-- MAYFEST POSTER MODAL -->
+  <div id="posterModal" class="poster-modal" role="dialog" aria-modal="true" aria-label="Mayfest event poster">
+    <div class="poster-modal-backdrop"></div>
+    <button class="poster-modal-close" id="posterClose" aria-label="Close poster">&#x2715;</button>
+    <div class="poster-modal-card">
+      <div class="poster-modal-img-wrap">
+        <img src="images/MayFest_web.jpg" alt="Mayfest Victorian Tea Party — Sunday 10 May 2026, 12 noon to 4pm, Derby Arboretum Community Garden. Free event." />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var modal = document.getElementById('posterModal');
+      var closeBtn = document.getElementById('posterClose');
+      var backdrop = modal.querySelector('.poster-modal-backdrop');
+
+      function closeModal() { modal.classList.remove('active'); }
+
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
 </body>
 </html>

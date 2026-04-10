@@ -166,5 +166,42 @@
   </footer>
 
   <script src="main.js"></script>
+
+  <!-- MAYFEST POSTER MODAL -->
+  <div id="posterModal" class="poster-modal" role="dialog" aria-modal="true" aria-label="Mayfest event poster">
+    <div class="poster-modal-backdrop"></div>
+    <div class="poster-modal-card">
+      <button class="poster-modal-close" id="posterClose" aria-label="Close poster">&#x2715;</button>
+      <div class="poster-modal-img-wrap">
+        <img src="images/MayFest_web.jpg" alt="Mayfest Victorian Tea Party — Sunday 10 May 2026, 12 noon to 4pm, Derby Arboretum Community Garden. Free event." />
+      </div>
+      <div class="poster-modal-footer">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var modal = document.getElementById('posterModal');
+      var closeBtn = document.getElementById('posterClose');
+      var backdrop = modal.querySelector('.poster-modal-backdrop');
+
+      // Only show if not already dismissed this session
+      if (!sessionStorage.getItem('posterDismissed')) {
+        setTimeout(function () { modal.classList.add('active'); }, 600);
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        sessionStorage.setItem('posterDismissed', '1');
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
 </body>
 </html>
