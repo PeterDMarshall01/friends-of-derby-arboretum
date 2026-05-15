@@ -189,7 +189,7 @@
       var backdrop = modal.querySelector('.poster-modal-backdrop');
 
       // Only show if not already dismissed this session
-      if (!sessionStorage.getItem('posterDismissed')) {
+      if (false) { // SET TO: if (!sessionStorage.getItem('posterDismissed')) { — to re-enable
         setTimeout(function () { modal.classList.add('active'); }, 600);
       }
 
