@@ -8,6 +8,81 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── Heritage Open Days poster grid ─────────────────────────── */
+    #heritage-open-days { scroll-margin-top: calc(var(--nav-h) + 1rem); }
+    .hod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .hod-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: zoom-in;
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-align: left;
+      padding: 0;
+      font: inherit;
+      color: inherit;
+    }
+    .hod-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .hod-thumb-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .hod-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+    }
+    .hod-card:hover .hod-thumb-wrap img { transform: scale(1.06); }
+    .hod-body { padding: 1.1rem 1.25rem 1.35rem; }
+    .hod-meta {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 0.35rem;
+    }
+    .hod-body h3 { color: var(--ink); font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .hod-body p { font-size: 0.85rem; margin-bottom: 0; }
+    .delay-3 { transition-delay: 0.45s; }
+
+    /* ── Hero ribbon ─────────────────────────────────────────────── */
+    .hero-ribbon {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      margin-top: 2rem;
+      background: var(--amber);
+      border: 1px solid rgba(0,0,0,0.1);
+      color: #241800;
+      text-align: center;
+      padding: 0.65rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    }
+    .hero-ribbon a {
+      color: #241800;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .hero-ribbon a:hover { color: #000; }
+  </style>
 </head>
 <body>
 
@@ -47,6 +122,11 @@
         <a href="about.html" class="btn btn-outline">Join Us</a>
       </div>
       <h2 class="hero-eyebrow" style="margin-top: 2.5rem;">Britain's First Public Arboretum · Est. 1840</h2>
+
+      <!-- HERO RIBBON -->
+      <div class="hero-ribbon">
+        🍂 Heritage Open Days 2026 — four special events this September. <a href="#heritage-open-days">See what's on →</a>
+      </div>
     </div>
 
   </section>
@@ -73,6 +153,66 @@
     </div>
   </section>
 
+  <!-- HERITAGE OPEN DAYS POSTERS -->
+  <section class="section hod-teaser" id="heritage-open-days">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-tag">Heritage Open Days 2026</span>
+        <h2>Four Special Events This September</h2>
+      </div>
+      <div class="hod-grid">
+
+        <button type="button" class="hod-card animate-in" data-poster-img="images/MicksTour2026.jpg" data-poster-alt="Derby Arboretum Tour, Wednesday 16th September 2026 at 11am">
+          <div class="hod-thumb-wrap">
+            <img src="images/MicksTour2026.jpg" alt="Derby Arboretum Tour poster">
+          </div>
+          <div class="hod-body">
+            <div class="hod-meta">Wed 16 Sep · 11am</div>
+            <h3>Derby Arboretum Tour</h3>
+            <p>Guided walk with Community Parks Officer Michael McNaught.</p>
+          </div>
+        </button>
+
+        <button type="button" class="hod-card animate-in delay-1" data-poster-img="images/PaulsTalk2026.jpg" data-poster-alt="Our Heritage: Learning from the Past to Protect the Future, Annual Anniversary Lecture by Paul Elliott, Wednesday 16th September 2026 at 6pm for 6.30pm">
+          <div class="hod-thumb-wrap">
+            <img src="images/PaulsTalk2026.jpg" alt="Annual Anniversary Lecture by Paul Elliott poster">
+          </div>
+          <div class="hod-body">
+            <div class="hod-meta">Wed 16 Sep · 6.30pm</div>
+            <h3>Annual Anniversary Lecture</h3>
+            <p>Paul Elliott on the Peak District and Derwent Valley Mills World Heritage Sites.</p>
+          </div>
+        </button>
+
+        <button type="button" class="hod-card animate-in delay-2" data-poster-img="images/ScribesTalk2026.jpg" data-poster-alt="Scribes and Illuminators, Sunday 13th September 2026 at 2pm">
+          <div class="hod-thumb-wrap">
+            <img src="images/ScribesTalk2026.jpg" alt="Scribes and Illuminators poster">
+          </div>
+          <div class="hod-body">
+            <div class="hod-meta">Sun 13 Sep · 2pm</div>
+            <h3>Scribes and Illuminators</h3>
+            <p>Jo Simister on manuscript process and production, past and present.</p>
+          </div>
+        </button>
+
+        <button type="button" class="hod-card animate-in delay-3" data-poster-img="images/IllustratorsTalk2026.jpg" data-poster-alt="The Illustrator's Challenge, Sunday 13th September 2026 at 4.30pm">
+          <div class="hod-thumb-wrap">
+            <img src="images/IllustratorsTalk2026.jpg" alt="The Illustrator's Challenge poster">
+          </div>
+          <div class="hod-body">
+            <div class="hod-meta">Sun 13 Sep · 4.30pm</div>
+            <h3>The Illustrator's Challenge</h3>
+            <p>Jo Simister on illustrating Derbyshire's saints, martyrs and misfits.</p>
+          </div>
+        </button>
+
+      </div>
+      <div class="section-footer">
+        <a href="events.html" class="btn btn-outline-dark">See All Events</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT TEASER -->
   <section class="section about-teaser">
     <div class="container two-col">
@@ -90,7 +230,24 @@
     </div>
   </section>
 
-  <!-- EVENTS TEASER -->
+  <!-- LOUDON LODGE CTA -->
+  <section class="section lodge-cta">
+    <div class="container two-col reverse">
+      <div class="col-text animate-in">
+        <span class="section-tag">Venue Hire</span>
+        <h2>Loudon Lodge</h2>
+        <p>Looking for a unique and characterful venue? Loudon Lodge, situated within the Arboretum, is available for hire for private events, meetings, and community gatherings.</p>
+        <a href="loudon-lodge.html" class="btn btn-primary">Enquire Now</a>
+      </div>
+      <div class="col-image animate-in delay-1">
+        <div class="image-frame">
+          <img src="images/loudon-lodge01.jpg" alt="Loudon Lodge"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS TEASER — hidden while May events are out of date; re-enable by removing this comment wrapper and updating dates
   <section class="section events-teaser bg-light">
     <div class="container">
       <div class="section-header animate-in">
@@ -119,7 +276,7 @@
           <div class="event-info">
             <h3>Craft in Company</h3>
             <p><strong>Loudon Lodge 10-3.</strong></p>
-             <p>Come & share a cuppa & see what we are up to (maybe bring your own UFU - 
+             <p>Come & share a cuppa & see what we are up to (maybe bring your own UFU -
               UnFinished Object - and a sandwich for lunch). FREE first time.</p>
             <a href="events.html" class="link-arrow">Find out more →</a>
           </div>
@@ -130,23 +287,7 @@
       </div>
     </div>
   </section>
-
-  <!-- LOUDON LODGE CTA -->
-  <section class="section lodge-cta">
-    <div class="container two-col reverse">
-      <div class="col-text animate-in">
-        <span class="section-tag">Venue Hire</span>
-        <h2>Loudon Lodge</h2>
-        <p>Looking for a unique and characterful venue? Loudon Lodge, situated within the Arboretum, is available for hire for private events, meetings, and community gatherings.</p>
-        <a href="loudon-lodge.html" class="btn btn-primary">Enquire Now</a>
-      </div>
-      <div class="col-image animate-in delay-1">
-        <div class="image-frame">
-          <img src="images/loudon-lodge01.jpg" alt="Loudon Lodge"/>
-        </div>
-      </div>
-    </div>
-  </section>
+  -->
 
   <!-- FOOTER -->
   <footer>
@@ -169,13 +310,13 @@
 
   <script src="main.js"></script>
 
-  <!-- MAYFEST POSTER MODAL -->
-  <div id="posterModal" class="poster-modal" role="dialog" aria-modal="true" aria-label="Mayfest event poster">
+  <!-- EVENT POSTER MODAL (Mayfest + Heritage Open Days) -->
+  <div id="posterModal" class="poster-modal" role="dialog" aria-modal="true" aria-label="Event poster">
     <div class="poster-modal-backdrop"></div>
     <div class="poster-modal-card">
       <button class="poster-modal-close" id="posterClose" aria-label="Close poster">&#x2715;</button>
       <div class="poster-modal-img-wrap">
-        <img src="images/MayFest_web.jpg" alt="Mayfest Victorian Tea Party — Sunday 10 May 2026, 12 noon to 4pm, Derby Arboretum Community Garden. Free event." />
+        <img id="posterModalImg" src="images/MayFest_web.jpg" alt="Mayfest Victorian Tea Party — Sunday 10 May 2026, 12 noon to 4pm, Derby Arboretum Community Garden. Free event." />
       </div>
       <div class="poster-modal-footer">
       </div>
@@ -187,21 +328,29 @@
       var modal = document.getElementById('posterModal');
       var closeBtn = document.getElementById('posterClose');
       var backdrop = modal.querySelector('.poster-modal-backdrop');
+      var modalImg = document.getElementById('posterModalImg');
 
-      // Only show if not already dismissed this session
-      if (false) { // SET TO: if (!sessionStorage.getItem('posterDismissed')) { — to re-enable
-        setTimeout(function () { modal.classList.add('active'); }, 600);
+      function openModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || 'Event poster';
+        modal.classList.add('active');
       }
 
       function closeModal() {
         modal.classList.remove('active');
-        sessionStorage.setItem('posterDismissed', '1');
       }
 
       closeBtn.addEventListener('click', closeModal);
       backdrop.addEventListener('click', closeModal);
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeModal();
+      });
+
+      // Heritage Open Days poster cards
+      document.querySelectorAll('.hod-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          openModal(card.getAttribute('data-poster-img'), card.getAttribute('data-poster-alt'));
+        });
       });
     })();
   </script>
