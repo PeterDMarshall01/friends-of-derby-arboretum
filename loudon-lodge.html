@@ -67,27 +67,6 @@
       transition: opacity 0.2s ease;
     }
     .form-link-btn:hover { opacity: 0.85; }
-    .tally-placeholder {
-      background: var(--green-pale);
-      border: 2px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: var(--ink-muted);
-    }
-    .tally-placeholder code {
-      display: block;
-      background: #e8f0e9;
-      border-radius: 6px;
-      padding: 0.8rem 1rem;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      text-align: left;
-      color: #2d5a34;
-      word-break: break-all;
-    }
     @media (max-width: 600px) {
       .enquiry-box {
         padding: 1.2rem;
@@ -171,37 +150,16 @@
         <div class="section-header">
           <span class="section-tag">Get in Touch</span>
           <h2>Make an Enquiry</h2>
-          <p style="max-width:520px; margin:0 auto;">Interested in hiring Loudon Lodge? Fill in the form below and we'll be in touch.</p>
+          <p style="max-width:520px; margin:0 auto;">Interested in hiring Loudon Lodge? Please email us.</p>
         </div>
 
         <div class="enquiry-box">
-          <h3>Hire Enquiry Form</h3>
-          <p>Interested in hiring Loudon Lodge for your event? We aim to respond within 3 working days.</p>
+          <h3>Hire Enquiry</h3>
+          <p>Interested in hiring Loudon Lodge for your event? Email us and we aim to respond within 3 working days.</p>
 
-          <!-- CURRENT: Link out to Google Form -->
-          <p>Click the button below to open our enquiry form — it will open in a new tab and works on all devices.</p>
-          <a class="form-link-btn"
-             href="https://docs.google.com/forms/d/e/1FAIpQLSeROOzpxJhENK0u5scfswzF93mc0yXjwDo9yvumwd0vudvXig/viewform"
-             target="_blank" rel="noopener noreferrer">
-            📋 Open Enquiry Form
+          <a class="form-link-btn" href="mailto:friendsderbyarbo@gmail.com">
+            ✉️ friendsderbyarbo@gmail.com
           </a>
-
-          <!--
-            TALLY EMBED — COMING SOON
-            =====================================================
-            1. Go to tally.so and create a free account
-            2. Build your form (suggested fields: Name, Email, Phone,
-               Type of event, Preferred date, Number of guests, Requirements)
-            3. Click Share → Embed → copy the iframe snippet
-            4. Delete the <a> button block above and the .tally-placeholder
-               div below, then paste your Tally iframe here instead.
-            =====================================================
-          -->
-          <div class="tally-placeholder">
-            <strong>📝 Tally embed goes here</strong><br>
-            Built proper form at tally.so, replace this block and the button above with your embed code. It will look something like this:
-            <code>&lt;iframe src="https://tally.so/embed/YOUR_FORM_ID" width="100%" height="500" frameborder="0"&gt;&lt;/iframe&gt;</code>
-          </div>
         </div>
       </div>
 
