@@ -1,5 +1,11 @@
+// Content is only hidden for the fade-in once we know this script is running
+document.documentElement.classList.add('js');
+
 // ── Lightbox ──
 (function() {
+  // Event pages ship their own lightbox using the same element IDs; running
+  // this one as well made both open at once on MayFest.
+  if (document.getElementById('lbImg')) return;
   const overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
   overlay.innerHTML = `
@@ -91,30 +97,29 @@ const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', function() {
-    navLinks.classList.toggle('open');
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 }
 
 // ── Scroll-triggered animations ──
+// Reveal as soon as any part of a block enters view. A percentage threshold
+// left tall blocks (e.g. on phones) permanently invisible as blank space.
 const animEls = document.querySelectorAll('.animate-in');
-const observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-animEls.forEach(function(el) { observer.observe(el); });
-
-// ── Active nav link ──
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(function(a) {
-  const href = a.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    a.classList.add('active');
-  } else {
-    a.classList.remove('active');
-  }
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0 });
+  animEls.forEach(function(el) { observer.observe(el); });
+} else {
+  animEls.forEach(function(el) { el.classList.add('visible'); });
+}
+// Printing and full-page captures never scroll, so show everything
+window.addEventListener('beforeprint', function() {
+  animEls.forEach(function(el) { el.classList.add('visible'); });
 });

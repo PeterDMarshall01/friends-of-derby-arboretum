@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Well Dressing 2025 — Friends of Derby Arboretum</title>
+  <meta name="description" content="Photos and highlights from Well Dressing 2025, a community event in Derby Arboretum run by the Friends of Derby Arboretum."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
@@ -46,14 +47,19 @@
   </style>
 </head>
 <body>
-  <nav id="navbar">
+  <nav id="navbar" aria-label="Main">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand"><img src="images/logo-temp.png" alt="Friends of Derby Arboretum logo" class="brand-logo"><span>Friends of Derby Arboretum</span></a>
-      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+      <a href="index.html" class="nav-brand">
+        <img src="images/logo-temp.png" alt="" class="brand-logo">
+        <span>Friends of Derby Arboretum</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="history.html">History</a></li>
-        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="events.html" class="active" aria-current="page">Events</a></li>
         <li><a href="loudon-lodge.html">Loudon Lodge</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -78,7 +84,7 @@
   <section class="gallery-section">
     <div class="container">
       <div class="section-header animate-in">
-        <span class="section-tag">Photo Gallery</span>
+        <span class="section-tag" aria-hidden="true">Photo Gallery</span>
         <h2>Memories from Well dressing 2025</h2>
         <p style="color: var(--ink-muted); font-size: 0.95rem; margin-top: 0.75rem;">Click any image to open the full gallery — use the arrows or your keyboard to browse through the photos.</p>
       </div>
@@ -103,8 +109,9 @@
   <section class="section">
     <div class="container">
       <div class="related-nav">
-        <a href="event-summer-workshop-2021.html">← Summer Workshop 2021</a>
-        <a href="events.html">All events</a>
+        <a href="event-luminate-2025.html">← Luminate 2025</a>
+        <a href="events.html" class="rn-back">All events</a>
+        <a href="event-schoolday-2025.html">School Day 2025 →</a>
       </div>
     </div>
   </section>
@@ -122,12 +129,27 @@
 
   <footer>
     <div class="container footer-inner">
-      <div class="footer-brand"><span class="brand-leaf">🌿</span><span>Friends of Derby Arboretum</span></div>
-      <nav class="footer-nav">
-        <a href="history.html">History</a><a href="events.html">Events</a><a href="loudon-lodge.html">Loudon Lodge</a>
-        <a href="news.html">News</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+      <div class="footer-brand">
+        <span>Friends of Derby Arboretum</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="history.html">History</a>
+        <a href="events.html">Events</a>
+        <a href="loudon-lodge.html">Loudon Lodge</a>
+        <a href="news.html">News</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
       </nav>
-      <p class="footer-copy">© 2026 Friends of Derby Arboretum. Registered Charity - 1176067. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/friendsofderbyarboretum/" target="_blank" rel="noopener" aria-label="Friends of Derby Arboretum on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/derby_arboretum_friends/" target="_blank" rel="noopener" aria-label="Friends of Derby Arboretum on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45.53c.64-.25 1.37-.42 2.43-.47C8.94.01 9.28 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 Friends of Derby Arboretum. Registered Charity 1176067. All rights reserved.</p>
     </div>
   </footer>
 

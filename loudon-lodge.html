@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loudon Lodge — Friends of Derby Arboretum</title>
+  <title>Loudon Lodge Venue Hire, Derby — Friends of Derby Arboretum</title>
+  <meta name="description" content="Venue hire in Derby: Loudon Lodge in Derby Arboretum seats up to 50, with a fully equipped kitchen, Wi-Fi, smart TVs and step-free access. Rates from £25 an hour."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
@@ -67,29 +68,54 @@
       transition: opacity 0.2s ease;
     }
     .form-link-btn:hover { opacity: 0.85; }
+    .rates-list { list-style: none; margin: 1.5rem 0 0; display: grid; gap: 0.75rem; }
+    .rates-list li {
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      padding: 1rem 1.25rem; background: var(--white);
+      border: 1px solid var(--border); border-radius: 10px;
+    }
+    .rates-list strong { color: var(--ink); }
+    .enquiry-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    @media (max-width: 700px) {
+      /* Swipeable strip instead of a mosaic that crops photos into slivers */
+      .lodge-gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        grid-template-rows: none;
+        border-radius: 0;
+        margin-bottom: 3rem;
+      }
+      .lodge-gallery > div {
+        flex: 0 0 85%;
+        aspect-ratio: 4/3;
+        scroll-snap-align: start;
+        border-radius: var(--radius);
+      }
+    }
     @media (max-width: 600px) {
       .enquiry-box {
-        padding: 1.2rem;
+        padding: 1.5rem 1.2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav id="navbar">
+  <nav id="navbar" aria-label="Main">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
-        <img src="images/logo-temp.png" alt="Friends of Derby Arboretum logo" class="brand-logo">
+        <img src="images/logo-temp.png" alt="" class="brand-logo">
         <span>Friends of Derby Arboretum</span>
       </a>
-      <button class="nav-toggle" id="navToggle">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="history.html">History</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="loudon-lodge.html" class="active">Loudon Lodge</a></li>
+        <li><a href="loudon-lodge.html" class="active" aria-current="page">Loudon Lodge</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -99,9 +125,9 @@
 
   <div class="page-hero">
     <div class="container">
-      <span class="section-tag" style="color:#8fcf97; border-color:#8fcf97;">Venue Hire</span>
+      <span class="section-tag" aria-hidden="true" style="color:#8fcf97; border-color:#8fcf97;">Venue Hire</span>
       <h1>Loudon Lodge</h1>
-      <p>A unique and characterful venue set within the beautiful surroundings of Derby Arboretum.</p>
+      <p>A characterful venue for hire in Derby, set within Britain's first public arboretum. Ideal for meetings, classes, workshops and celebrations for up to 50 people.</p>
     </div>
   </div>
 
@@ -109,57 +135,54 @@
     <div class="container">
 
       <!-- Photo Gallery -->
-      <div class="lodge-gallery animate-in">
-        <div class="lg-main"><img src="images/loudon-lodge-exterior01.jpg" alt="Loudon Lodge exterior"/></div>
-        <div><img src="images/loudon-lodge-interior01.jpg" alt="Lodge interior"/></div>
-        <div><img src="images/loudon-lodge-interior02.jpg" alt="Lodge interior"/></div>
-        <div><img src="images/loudon-lodge-kitchen01.jpg" alt="Lodge kitchen"/></div>
-        <div><img src="images/arboretum_tree02.jpg" alt="Arboretum tree"/></div>
+      <div class="lodge-gallery" aria-label="Photos of Loudon Lodge">
+        <div class="lg-main"><img src="images/loudon-lodge-exterior01.jpg" alt="Exterior of Loudon Lodge in Derby Arboretum"/></div>
+        <div><img src="images/loudon-lodge-interior01.jpg" alt="Upstairs room at Loudon Lodge set out with tables" loading="lazy"/></div>
+        <div><img src="images/loudon-lodge-interior02.jpg" alt="Interior of Loudon Lodge" loading="lazy"/></div>
+        <div><img src="images/loudon-lodge-kitchen01.jpg" alt="Fully equipped kitchen at Loudon Lodge" loading="lazy"/></div>
+        <div><img src="images/arboretum_tree02.jpg" alt="Mature tree in the Arboretum grounds" loading="lazy"/></div>
       </div>
-      <p style="text-align:center; color:var(--ink-muted); font-size:0.85rem; margin-top:-2.5rem; margin-bottom:3.5rem;">
-      </p>
 
       <!-- About the Lodge -->
-      <div class="animate-in" style="margin-bottom:5rem;">
-        <span class="section-tag">About the Venue</span>
+      <div style="margin-bottom:5rem;">
+        <span class="section-tag" aria-hidden="true">About the Venue</span>
         <h2>A Unique Setting</h2>
         <p>Loudon Lodge is a charming building situated within Derby Arboretum, offering a truly unique setting for private events, meetings, community gatherings, and celebrations. Named after John Claudius Loudon, the visionary landscape designer who created the Arboretum, the Lodge combines historic character with the tranquil beauty of its parkland surroundings.</p>
 
         <h2>Facilities</h2>
         <div class="features-list">
           <div class="feature-item">🌳 Stunning Arboretum setting</div>
-          <div class="feature-item">Downstairs room: 4m x 3.5m. Upstairs room 9m x 4.5m</div>
-          <div class="feature-item">👥 Multi-use space for up to 50 people. Including six fold away tables 5' x 2' & chairs</div>
+          <div class="feature-item">📐 Downstairs room 4m × 3.5m; upstairs room 9m × 4.5m</div>
+          <div class="feature-item">👥 Multi-use space for up to 50 people, with six fold-away tables (5' × 2') and chairs</div>
           <div class="feature-item">📅 Generally available. Contact us for availability</div>
-          <div class="feature-item">🧑🏿‍🍳 Fully equipped kitchen with oven, fridge, freezer, microwave, sink, worsktops, etc</div>
+          <div class="feature-item">🧑🏿‍🍳 Fully equipped kitchen with oven, fridge, freezer, microwave, sink, worktops, etc</div>
           <div class="feature-item">♿ All-ability access to building including downstairs room, kitchen &amp; disabled toilet</div>
           <div class="feature-item">📺 Each room has a flatscreen Smart TV. Downstairs room 55" & Upstairs 65"</div>
           <div class="feature-item">🅿️ Parking nearby at Grove Street Car Park</div>
           <div class="feature-item">🏛️ Historic building with central heating & hot water</div>
-          <div class="feature-item">📶 Wi-fi available</div>
+          <div class="feature-item">📶 Wi-Fi available</div>
         </div>
 
-        <h2>Rates for Hiring</h2>
-        <p><strong>Short single sessions:</strong> £25 per hour for charity/community groups</p>
-        <p><strong>Longer single session:</strong> £150 for full day</p>
-        <p><strong>Regular bookings:</strong> £70 per day. £50 for up to 5 hours — a free session after every 10 booked.</p>
+        <h2 style="margin-top:3rem;">Hire Rates</h2>
+        <ul class="rates-list">
+          <li><strong>Short single session</strong><span>£25 per hour (charity &amp; community groups)</span></li>
+          <li><strong>Full day, single booking</strong><span>£150</span></li>
+          <li><strong>Regular bookings</strong><span>£70 per day, or £50 for up to 5 hours</span></li>
+        </ul>
+        <p style="margin-top:1rem;">Regular bookers get a free session after every 10 booked.</p>
       </div>
 
-      <!-- Enquiry Form -->
-      <div class="animate-in">
-        <div class="section-header">
-          <span class="section-tag">Get in Touch</span>
-          <h2>Make an Enquiry</h2>
-          <p style="max-width:520px; margin:0 auto;">Interested in hiring Loudon Lodge? Please email us.</p>
-        </div>
-
-        <div class="enquiry-box">
-          <h3>Hire Enquiry</h3>
-          <p>Interested in hiring Loudon Lodge for your event? Email us and we aim to respond within 3 working days.</p>
-
-          <a class="form-link-btn" href="mailto:friendsderbyarbo@gmail.com">
-            ✉️ friendsderbyarbo@gmail.com
-          </a>
+      <!-- Enquiry -->
+      <div>
+        <div class="enquiry-box" style="text-align:center;">
+          <span class="section-tag" aria-hidden="true" style="border:none; padding-left:0;">Book the Lodge</span>
+          <h2>Check availability</h2>
+          <p>Tell us your date, times and roughly how many people are coming. We aim to reply within 3 working days.</p>
+          <div class="enquiry-actions">
+            <a class="form-link-btn" href="mailto:friendsderbyarbo@gmail.com?subject=Loudon%20Lodge%20hire%20enquiry">Email to book</a>
+            <a class="btn btn-outline-dark" href="contact.html?subject=Loudon%20Lodge%20hire">Use our enquiry form</a>
+          </div>
+          <p style="margin-top:1.25rem; font-size:0.9rem;">friendsderbyarbo@gmail.com</p>
         </div>
       </div>
 
@@ -169,17 +192,25 @@
   <footer>
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="brand-leaf">🌿</span>
         <span>Friends of Derby Arboretum</span>
       </div>
-      <nav class="footer-nav">
+      <nav class="footer-nav" aria-label="Footer">
         <a href="history.html">History</a>
         <a href="events.html">Events</a>
         <a href="loudon-lodge.html">Loudon Lodge</a>
         <a href="news.html">News</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
       </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/friendsofderbyarboretum/" target="_blank" rel="noopener" aria-label="Friends of Derby Arboretum on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/derby_arboretum_friends/" target="_blank" rel="noopener" aria-label="Friends of Derby Arboretum on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45.53c.64-.25 1.37-.42 2.43-.47C8.94.01 9.28 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+        </a>
+      </div>
       <p class="footer-copy">© 2026 Friends of Derby Arboretum. Registered Charity 1176067. All rights reserved.</p>
     </div>
   </footer>
